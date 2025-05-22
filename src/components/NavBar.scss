@@ -1,0 +1,8 @@
+.navbar{
+    background-image: linear-gradient(to right, #0b0022, #1d0154);
+    &__name{
+        font-size: 1.5em;
+        color: white;
+        text-align: center;
+    }
+}
