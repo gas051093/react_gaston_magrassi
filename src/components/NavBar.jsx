@@ -1,10 +1,11 @@
 import './Navbar.scss';
 import CartWidget from './CartWidget';
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router';
+import { useNavigate } from 'react-router';
 
 function NavBar() { 
-    const [cat, setCat] = useState([]);
+  const [cat, setCat] = useState([]);
+  const navigate = useNavigate();
 
   const callJson = async (url) => {
       try {const resp = await fetch(url);
@@ -40,9 +41,9 @@ function NavBar() {
             <ul className="dropdown-menu dropdown-menu-dark">
               {cat.map((cate) => (
                 <li key={cate}>
-                  <NavLink className="dropdown-item" to={`/category/${cate}`}>
+                  <a className="dropdown-item" onClick={() => navigate(`category/${cate}`)}>
                     {cate}
-                  </NavLink>
+                  </a>
                 </li>
               ))}
             </ul>

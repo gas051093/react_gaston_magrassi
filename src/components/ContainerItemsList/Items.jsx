@@ -1,5 +1,7 @@
 import './Items.scss'
-function Items({ prod}) { 
+import { useNavigate } from 'react-router';
+function Items({ prod }) { 
+    const navigate = useNavigate()
     return (
         <div className="items__card">
             <img className='items__image' src={prod.thumbnail} alt={prod.title} />
@@ -8,7 +10,7 @@ function Items({ prod}) {
                 <p className='items__descrip'>{prod.description}</p>
                 <p className='items__price'>$ {prod.price}</p>
                 <p>Stock: {prod.stock}</p>
-                <button className='items__btn'> Agregar al Carrito</button>
+                <button onClick={() => navigate(`/item/${prod.id}`)} className='items__btn'>Ver mas</button>
             </div>
             
         </div>
