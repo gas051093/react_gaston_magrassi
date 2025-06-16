@@ -1,12 +1,20 @@
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import ContainerItemsList from './components/ContainerItemsList/ContainerItemsList'
+import {Routes, Route, BrowserRouter } from "react-router";
 
 function App() {
   return (
-    <>
-      <NavBar/>
-      <ItemListContainer title={"Bienvenido a Csistemas Shop"}/>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<ContainerItemsList />} />
+        <Route path="/category/:catName" element={<ContainerItemsList />} />
+      </Routes>
+    </BrowserRouter>
+    // <>
+    //   <NavBar/>
+    //   <ContainerItemsList />
+    // </>
   );
 }
 
