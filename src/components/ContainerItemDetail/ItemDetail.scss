@@ -1,0 +1,50 @@
+.itemDetail{
+    background-color: #e3e3e3;
+    height: calc(100dvh - 70px);
+    overflow: auto;
+    &__container{
+        max-width: 1140px;
+        border-radius: 15px;
+        background-color: white;
+        height: fit-content;
+    }
+    &__img{
+        background-color: rgb(216, 216, 216);
+        border-radius: 10px;
+        & img{
+            width: 100%;
+        }
+    }
+    &__containerPrice{
+        border: 1px solid #a5a5a5;
+        border-radius: 10px;
+    }
+    &__title{
+        font-size: 3em;
+    }
+    &__price{
+        font-size: 2em;
+    }
+    &__sub{
+        font-size: 0.5em;
+    }
+    &__btn{
+        all: unset;
+        cursor: pointer;
+        background-color: #210762;
+        color: white;
+        padding: 0.20em;
+        border-radius: 0.5em;
+        text-align: center;
+        &:hover{
+            background-color: #35148a;
+        }
+        &:active{
+            background-color: #1a0551;
+        }
+    }
+    &__dimenciones{
+        display: block;
+        text-indent: 1em;
+    }
+}

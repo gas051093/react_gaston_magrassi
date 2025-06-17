@@ -25,9 +25,7 @@ function NavBar() {
     
     return (
       <div className="navbar row p-0 py-3 m-0">
-        <p className="navbar__name p-0 m-0 position-absolute start-50 translate-middle-x">
-          Csistemas shop
-        </p>
+        <a  onClick={()=> navigate(`/`)} className="navbar__name p-0 m-0 " >Csistemas shop</a>
         <div className="p-0 pe-3 m-0 col-12 d-flex column-gap-3 justify-content-end">
           <div className="dropdown">
             <button

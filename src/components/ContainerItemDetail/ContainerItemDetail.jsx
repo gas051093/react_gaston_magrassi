@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router"
+import { useParams } from "react-router"
+import ItemDetail from "./ItemDetail";
 function ContainerItemDetail() { 
-    const [prod, setProd] = useState([]);
+    const [prod, setProd] = useState({});
     const { itemId } = useParams();
-    const navigate = useNavigate();
 
     const callJson = async(url) => {
         try {
@@ -20,13 +20,10 @@ function ContainerItemDetail() {
     }
     useEffect(() => { 
         getItems()
-    },[])
+    }, [])
 
     return (
-        <div>
-            <p>{prod.title}</p>
-            <button onClick={() => navigate(`/`)} >Volver</button>
-        </div>
+        <ItemDetail prod={prod} />
     )
 }
 

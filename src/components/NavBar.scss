@@ -1,8 +1,18 @@
 .navbar{
     background-image: linear-gradient(to right, #0b0022, #1d0154);
     &__name{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-decoration: none;
         font-size: 1.5em;
         color: white;
         text-align: center;
+        cursor: pointer;
+        width: fit-content;
+        @media screen and (max-width: 768px) {
+            font-size: 1em;
+            left: 20%;
+        }
     }
 }

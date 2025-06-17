@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import "./ContainerItemsList.scss";
-import ItemsList from "./ItemsList";
+import ItemList from "./ItemList";
 import { useParams } from "react-router";
 
-function ContainerItemsList() { 
+function ContainerItemList() { 
     const [prod, setProd] = useState([]);
     const { catName } = useParams();
     
@@ -28,9 +27,11 @@ function ContainerItemsList() {
     }
     useEffect(() => { 
         getProd();
-    },[catName])
-    return <ItemsList products={prod} />;
+    }, [catName])
 
+    return (
+        <ItemList products={prod} />
+    )
 }
 
-export default ContainerItemsList;
+export default ContainerItemList;

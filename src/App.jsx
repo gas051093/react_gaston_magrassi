@@ -1,5 +1,5 @@
 import NavBar from './components/NavBar';
-import ContainerItemsList from './components/ContainerItemsList/ContainerItemsList'
+import ContainerItemList from './components/ContainerItemList/ContainerItemList'
 import ContainerItemDetail from './components/ContainerItemDetail/ContainerItemDetail'
 import {Routes, Route, BrowserRouter } from "react-router";
 
@@ -8,8 +8,8 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<ContainerItemsList />} />
-        <Route path="/category/:catName" element={<ContainerItemsList />} />
+        <Route path="/" element={<ContainerItemList />} />
+        <Route path="/category/:catName" element={<ContainerItemList />} />
         <Route path="/item/:itemId" element={<ContainerItemDetail />} />
       </Routes>
     </BrowserRouter>
