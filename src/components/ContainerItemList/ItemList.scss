@@ -1,5 +1,7 @@
 .ItemList{
     background-color: rgb(222, 222, 222);
+    height: calc(100dvh - 70px);
+    overflow: auto;
     &__container{
         max-width: 1140px;
     }
