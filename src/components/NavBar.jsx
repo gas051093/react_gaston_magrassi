@@ -1,4 +1,4 @@
-import './Navbar.scss';
+import './NavBar.scss';
 import CartWidget from './CartWidget';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
