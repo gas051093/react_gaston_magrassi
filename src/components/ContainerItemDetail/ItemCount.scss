@@ -5,6 +5,15 @@
     width: fit-content;
     justify-content: center;
     align-items: center;
+    &__count{
+        display: flex;
+        color: white;
+        width: fit-content;
+        min-width: 2em;
+        height: 2em;
+        justify-content: center;
+        align-items: center;
+    }
     &__btn{
         all: unset;
         cursor: pointer;
@@ -14,22 +23,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 2em;
-        height: 2em;
+        padding: 0.2em;
         &:hover{
             background-color: #35148a;
         }
         &:active{
             background-color: #1a0551;
         }
-    }
-    &__count{
-        display: flex;
-        color: white;
-        width: fit-content;
-        min-width: 2em;
-        height: 2em;
-        justify-content: center;
-        align-items: center;
+        &--count{
+            width: 1em;
+            height: 1em;
+        }
     }
 }

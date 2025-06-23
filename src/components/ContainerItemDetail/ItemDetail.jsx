@@ -18,9 +18,7 @@ function ItemDetail({ prod }) {
                                 <p className="itemDetail__stock">Stock: {prod.stock}U. en nuestras sucursales</p>  
                             </div>
                             <div className='d-grid gap-2'>
-                                    <ItemCount/>
-                                    <button className='itemDetail__btn'>Comprar</button>
-                                    <button className='itemDetail__btn'>Agregar al Carrito</button>
+                                    <ItemCount product={prod}/>
                             </div>
                         </div>
                     </div>
