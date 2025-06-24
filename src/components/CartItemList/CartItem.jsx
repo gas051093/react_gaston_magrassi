@@ -1,10 +1,11 @@
 function CartItem ({ prod }) { 
     return (
-        <div>
-            <p>Esete es el cartlist</p>
-            <p>{prod.title}</p>
-        </div>
-    )
+      <tr>
+        <td scope="row">{prod.title}</td>
+        <td>{prod.price}</td>
+        <td>{prod.category}</td>
+      </tr>
+    );
 }
 
 export default CartItem
