@@ -8,7 +8,7 @@ function ItemDetail({ prod }) {
                 <div className="itemDetail__container col-12 p-3">
                     <div className="row p-2 gap-3 justify-content-between mb-4">
                         <div className="itemDetail__img col-12 col-md-8">
-                            <img className="" src={prod.thumbnail} alt={prod.title} />
+                            <img className="" src={prod.img} alt={prod.title} />
                         </div>
                         <div className="col-12 col-md-3 py-2 itemDetail__containerPrice d-flex flex-column justify-content-between">
                             <div>  

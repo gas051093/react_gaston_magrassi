@@ -4,7 +4,7 @@ function Item({ prod }) {
     const navigate = useNavigate()
     return (
         <div className="item__card">
-            <img className='item__image' src={prod.thumbnail} alt={prod.title} />
+            <img className='item__image' src={prod.img} alt={prod.title} />
             <div className='item__cont p-2'>
                 <p className='item__title'>{prod.title}</p>
                 <p className='item__descrip'>{prod.description}</p>

@@ -2,22 +2,15 @@ import './NavBar.scss';
 import CartWidget from './CartWidget';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { getCategory } from '../firebase/db';
 
 function NavBar() { 
   const [cat, setCat] = useState([]);
   const navigate = useNavigate();
 
-  const callJson = async (url) => {
-      try {const resp = await fetch(url);
-        const data = await resp.json();
-        return data
-      } catch (err) {
-        console.log(`error encontrado en la conx: ${err}`)
-      }
-        
-    }
+  
     async function setCategorias() {
-        setCat(await callJson("https://dummyjson.com/products/category-list"))
+        setCat(await getCategory())
     }
     useEffect(() => { 
         setCategorias();

@@ -1,21 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ItemDetail from "./ItemDetail";
+import { getProduct } from "../../firebase/db";
 function ContainerItemDetail() { 
     const [prod, setProd] = useState();
     const { itemId } = useParams();
 
-    const callJson = async(url) => {
-        try {
-            const resp = await fetch(`${url}`)
-            const data = await resp.json();
-            return data;
-        } catch (err) { 
-            console.log(`se encontro el siguiene error ${err}`)
-        }
-    }
     const getItems = async() => { 
-        const data = await callJson(`https://dummyjson.com/products/${itemId}`)
+        const data = await getProduct(itemId);
         setProd(data)
     }
     useEffect(() => { 
