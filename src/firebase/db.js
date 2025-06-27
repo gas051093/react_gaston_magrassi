@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, getDoc, doc, query, where } from "firebase/firestore";
 import { app } from "./config";
 
 const db = getFirestore(app);
@@ -18,18 +18,26 @@ export const getProduct = async (id) => {
     try {
         const docRef = doc(db, "products", id);
         const docSnap = await getDoc(docRef);
-
         if (docSnap.exists()) {
-        return docSnap.data();
+        const product = {id: docSnap.id, ...docSnap.data()}
+        return product
         } else {
-        // docSnap.data() will be undefined in this case
-        console.log("No such document!");
+        alert("Producto no encontrado");
 }
     } catch (err) {
         console.log(err);       
     }
 }
-
+export const filterProducts = async (filter) => { 
+    try {
+        const q = query(collection(db, "products"), where("category", "==", filter));
+        const querySnapshot = await getDocs(q);
+        const products = querySnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))
+        return products;
+    } catch (err) { 
+        console.log(err)
+    }
+}
 export const getCategory = async() =>{
     try {
         const products = await getProducts();

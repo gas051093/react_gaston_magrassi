@@ -1,10 +1,15 @@
-function CartItem ({ prod }) { 
+import './CartItem.scss'
+function CartItem({ prod }) { 
     return (
-      <tr>
-        <td scope="row">{prod.title}</td>
-        <td>{prod.price}</td>
-        <td>{prod.category}</td>
-      </tr>
+      <div className='CartItem'>
+        <div>
+          <img className="CartItem__img" src={ prod.img} alt={prod.title} />
+        </div>
+        <div>{prod.title}</div>
+        <div>{ prod.count}</div>
+        <div>$ {prod.price}</div>
+        <div><button className='CartItem__btn'>X</button></div>
+      </div>
     );
 }
 

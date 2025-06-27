@@ -13,7 +13,7 @@ function CartProvider({ children }) {
             setCart([...cart, item])  
         }
     }
-    const getAmount = () => { 
+    const getAmount = () => {
         const amounts = cart.map(item => item.count);
         const amount = amounts.reduce((acc, currentValue) => acc + currentValue, 0)
         return amount

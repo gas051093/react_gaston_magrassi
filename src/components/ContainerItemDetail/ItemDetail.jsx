@@ -14,7 +14,7 @@ function ItemDetail({ prod }) {
                             <div>  
                                 <h2 className="itemDetail__title m-0 p-0">{prod.title}</h2>
                                 <p className="itemDetail__rating">Rating: {prod.rating}⭐</p>
-                                <p className="itemDetail__price mt-5">U$D {prod.price} <br/><span className='itemDetail__sub'>precio sin impuestos</span></p>
+                                <p className="itemDetail__price mt-5">$ {prod.price} <br/><span className='itemDetail__sub'>precio sin impuestos</span></p>
                                 <p className="itemDetail__stock">Stock: {prod.stock}U. en nuestras sucursales</p>  
                             </div>
                             <div className='d-grid gap-2'>
@@ -29,11 +29,6 @@ function ItemDetail({ prod }) {
                         <p>{prod.description}</p>
                         <p>Marca: {prod.brand ? prod.brand : 'Sin marca'}</p>
                         <p>Garantia: {prod.warrantyInformation}</p>
-                        <p className=''>Dimenciones:
-                            <span className='itemDetail__dimenciones' >Ancho: {prod.dimensions?.width}</span>
-                            <span className='itemDetail__dimenciones' >Alto: {prod.dimensions?.height}</span>
-                            <span className='itemDetail__dimenciones' >Profundidad: {prod.dimensions?.depth}</span>
-                        </p>
                     </div>
                 </div>
             </div>

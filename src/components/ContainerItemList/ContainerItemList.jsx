@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router";
-import { getProducts} from "../../firebase/db";
+import { getProducts, filterProducts } from "../../firebase/db";
 
 function ContainerItemList() { 
-    const [prod, setProd] = useState([]);
+    const [prod, setProd] = useState();
     const { catName } = useParams();
     
     const getProd = async () => { 
         if (catName) {
-            const filter = await callJson(`https://dummyjson.com/products/category/${catName}`);
-            setProd(filter.products)
+            const filter = await filterProducts(catName);
+            setProd(filter)
         } else {
             const all = await getProducts();
             setProd(all)
@@ -21,7 +21,15 @@ function ContainerItemList() {
     }, [catName])
 
     return (
-        <ItemList products={prod} />
+        <>
+        {prod ? (<ItemList products={prod} />) : (
+          <div className="position-absolute top-50 start-50 translate-middle">
+            <div className="spinner-border " role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
+      </>
     )
 }
 
