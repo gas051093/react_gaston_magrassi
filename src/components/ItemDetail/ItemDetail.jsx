@@ -1,5 +1,5 @@
 import './ItemDetail.scss'
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 import { formatPrice } from "../Helpers/priceFormat";
 function ItemDetail({ prod }) { 
     

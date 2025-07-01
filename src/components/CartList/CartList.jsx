@@ -1,4 +1,4 @@
-import CartItem from "./CartItem";
+import CartItem from "../CartItem/CartItem"
 import './CartList.scss'
 import { formatPrice } from '../Helpers/priceFormat'
 
