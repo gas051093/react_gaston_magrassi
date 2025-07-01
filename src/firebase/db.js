@@ -22,10 +22,12 @@ export const getProduct = async (id) => {
         const product = {id: docSnap.id, ...docSnap.data()}
         return product
         } else {
-        alert("Producto no encontrado");
+            alert("Producto no encontrado");
+            return []
 }
     } catch (err) {
-        console.log(err);       
+        console.log(err);  
+        return []
     }
 }
 export const filterProducts = async (filter) => { 
@@ -36,6 +38,7 @@ export const filterProducts = async (filter) => {
         return products;
     } catch (err) { 
         console.log(err)
+        return [];
     }
 }
 export const getCategory = async() =>{

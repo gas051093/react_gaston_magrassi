@@ -23,12 +23,23 @@ function CartProvider({ children }) {
         setCart([]);
     }
 
+    const removeFromCart = (id) => { 
+        const newCart = cart.filter(prod => prod.id !== id)
+        setCart(newCart)
+    }
+    const cartTotal = () => { 
+        const subTotal = cart.map(prod => prod.price * prod.count)
+        const total = subTotal.reduce((acc, currentValue) => acc + currentValue, 0)
+        return total
+    }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, getAmount, clearCart}}>
-            {children}
-        </CartContext.Provider>
-    )
+      <CartContext.Provider
+        value={{ cart, addToCart, getAmount, clearCart, removeFromCart, cartTotal}}
+      >
+        {children}
+      </CartContext.Provider>
+    );
 }
 
 export default CartProvider;

@@ -4,10 +4,12 @@ import { useParams } from "react-router";
 import { getProducts, filterProducts } from "../../firebase/db";
 
 function ContainerItemList() { 
-    const [prod, setProd] = useState();
-    const { catName } = useParams();
+  const [prod, setProd] = useState();
+  const { catName } = useParams();
+  const [spinner, setSpinner] = useState(true)
     
-    const getProd = async () => { 
+  const getProd = async () => { 
+        // setSpinner(true);
         if (catName) {
             const filter = await filterProducts(catName);
             setProd(filter)
