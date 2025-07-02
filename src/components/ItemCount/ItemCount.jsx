@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import CartContext from "../Context/CartContext";
+import CartContext from "../../Context/CartContext";
 import './ItemCount.scss';
 import Swal from "sweetalert2";
 function ItemCount({product}) { 

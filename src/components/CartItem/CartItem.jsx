@@ -1,6 +1,6 @@
 import './CartItem.scss'
 import { useContext } from "react";
-import { formatPrice } from "../Helpers/priceFormat";
+import { formatPrice } from "../../Helpers/priceFormat";
 import CartContext from "../../Context/CartContext"
 import Swal from "sweetalert2";
 function CartItem({ prod }) { 

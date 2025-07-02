@@ -1,12 +1,11 @@
 import './NavBar.scss';
 import CartWidget from './CartWidget';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router';
 import { getCategory } from '../firebase/db';
 
 function NavBar() { 
   const [cat, setCat] = useState([]);
-  const navigate = useNavigate();
 
   
     async function setCategorias() {
@@ -18,7 +17,7 @@ function NavBar() {
     
     return (
       <div className="navbar row p-0 py-3 m-0">
-        <a  onClick={()=> navigate(`/`)} className="navbar__name p-0 m-0 " >Csistemas shop</a>
+        <NavLink to={"/"} className='navbar__name p-0 m-0' > Csistemas SHOP </NavLink>
         <div className="p-0 pe-3 m-0 col-12 d-flex column-gap-3 justify-content-end">
           <div className="dropdown">
             <button
@@ -32,9 +31,8 @@ function NavBar() {
             <ul className="dropdown-menu dropdown-menu-dark">
               {cat.map((cate) => (
                 <li key={cate}>
-                  <a className="dropdown-item" onClick={() => navigate(`category/${cate}`)}>
-                    {cate}
-                  </a>
+                  <NavLink to={`/category/${cate}`} className={({ isActive }) => `dropdown-item ${isActive ? 'active' : ''}`} > {cate}
+                  </NavLink>
                 </li>
               ))}
             </ul>

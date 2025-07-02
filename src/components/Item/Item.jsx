@@ -1,5 +1,5 @@
 import './Item.scss';
-import { formatPrice } from "../Helpers/priceFormat";
+import { formatPrice } from "../../Helpers/priceFormat";
 import { useNavigate } from 'react-router';
 function Item({ prod }) { 
     const navigate = useNavigate()
