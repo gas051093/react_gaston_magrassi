@@ -2,7 +2,6 @@ import './ItemDetail.scss'
 import ItemCount from '../ItemCount/ItemCount';
 import { formatPrice } from "../../Helpers/priceFormat";
 function ItemDetail({ prod }) { 
-    
     return (
       <>
         <div className="itemDetail p-5 row m-0 justify-content-center">

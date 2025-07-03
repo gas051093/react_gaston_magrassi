@@ -25,7 +25,7 @@ function CartList({ cart, cartTotal}) {
               <div className="">
                 <p className="p-0 m-0 mb-3 text-end CartList__total">Total: {formatPrice(cartTotal())}{" "}</p>
                 <div className="d-flex justify-content-center gap-3">
-                  <button className="CartList__btn">Comprar</button>
+                  <button className="CartList__btn" onClick={() => navigate('/checkout')}>Comprar</button>
                   <button className="CartList__btn " onClick={ () => clearCart()}>Vaciar carrito</button>
                 </div>
               </div>

@@ -1,0 +1,27 @@
+.checkout{
+    background-image: linear-gradient(to bottom right, #33274e, #160930);
+    height: calc(100dvh - 70px);
+    overflow: auto;
+    &__content{
+        background-color: rgb(255, 255, 255);
+        border-radius: 1px;
+        box-shadow: 3px 3px 10px black;
+        height: fit-content;
+        max-width: 560px;
+    }
+    &__btn{
+        all: unset;
+        cursor: pointer;
+        background-color: #210762;
+        color: white;
+        padding: 0.20em;
+        border-radius: 0.5em;
+        text-align: center;
+        &:hover{
+            background-color: #35148a;
+        }
+        &:active{
+            background-color: #1a0551;
+        }
+    }
+}

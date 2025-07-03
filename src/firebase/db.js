@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, getDoc, doc, query, where } from "firebase/firestore";
+import { getFirestore, collection, getDocs, getDoc, doc, query, addDoc, where } from "firebase/firestore";
 import { app } from "./config";
 
 const db = getFirestore(app);
@@ -49,5 +49,14 @@ export const getCategory = async() =>{
     } catch (err) {
         console.log(err)
         return [];
+    }
+}
+
+export const createOrder = async (order) => { 
+    try {
+        const docRef = await addDoc(collection(db, "orders"), order);
+        return docRef.id
+    } catch (err) { 
+        console.log(err)
     }
 }
