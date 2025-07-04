@@ -6,11 +6,8 @@
         background-color: rgb(255, 255, 255);
         border-radius: 1px;
         box-shadow: 3px 3px 10px black;
-        height: 360px;
+        height: fit-content;
         max-width: 560px;
-        &--cart{
-            overflow: auto;
-        }
     }
     &__btn{
         all: unset;
@@ -25,6 +22,9 @@
         }
         &:active{
             background-color: #1a0551;
+        }
+        &--secondary{
+            background-color: rgb(110, 10, 10);
         }
     }
 }

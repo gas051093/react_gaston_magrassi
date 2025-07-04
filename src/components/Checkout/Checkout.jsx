@@ -109,6 +109,13 @@ function Checkout() {
           <button type="submit" className="checkout__btn">
             Comprar
           </button>
+          <button
+            type="button"
+            className="checkout__btn checkout__btn--secondary"
+            onClick={() => navigate("/")}
+          >
+            Seguir comprando
+          </button>
         </form>
       </div>
     </section>
