@@ -58,5 +58,6 @@ export const createOrder = async (order) => {
         return docRef.id
     } catch (err) { 
         console.log(err)
+        return null
     }
 }
