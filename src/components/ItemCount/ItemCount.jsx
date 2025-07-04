@@ -7,7 +7,6 @@ function ItemCount({product}) {
   const [count, setCount] = useState(1)
   const { addToCart } = useContext(CartContext)
   const navigate = useNavigate()
-  
   const handleAddCart = () => { 
     addToCart({ ...product, count });
     Swal.fire({
@@ -23,8 +22,6 @@ function ItemCount({product}) {
   }
   const handleCountAdd = () => setCount(count < product.stock ? count + 1 : count);
   const handleCountRest = () => setCount(count > 1 ? count - 1 : 1);
-  
-  
   return (
     <>
       <div className="itemCount">

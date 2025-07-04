@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router";
-
 function EmptyCart() {
     const navigate = useNavigate()
     return (
@@ -16,5 +15,4 @@ function EmptyCart() {
       </div>
     );
 }
-
 export default EmptyCart

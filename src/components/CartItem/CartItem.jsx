@@ -28,7 +28,7 @@ function CartItem({ prod }) {
   };
     return (
       <div className='CartItem'>
-        <div>
+        <div className=''>
           <img className="CartItem__img" src={ prod.img} alt={prod.title} />
         </div>
         <div>{prod.title}</div>
@@ -38,5 +38,4 @@ function CartItem({ prod }) {
       </div>
     );
 }
-
 export default CartItem

@@ -29,7 +29,6 @@ function ItemDetail({ prod }) {
                 </div>
               </div>
             </div>
-
             <div className="col-12 col-md-8">
               <h4>Descipcion del producto</h4>
               <hr />
@@ -42,5 +41,4 @@ function ItemDetail({ prod }) {
       </>
     );
 }
-
 export default ItemDetail

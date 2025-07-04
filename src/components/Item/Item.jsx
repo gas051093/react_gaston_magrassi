@@ -15,6 +15,5 @@ function Item({ prod }) {
             
         </div>
     )
-    
 }
 export default Item;

@@ -5,8 +5,6 @@ import { formatPrice } from '../../Helpers/priceFormat'
 import { useContext } from "react"
 import { useNavigate } from "react-router"
 import EmptyCart from "../EmptyCart"
-
-
 function CartList({ cart, cartTotal}) {
   const { clearCart } = useContext(CartContext)
   const navigate = useNavigate();
@@ -23,7 +21,7 @@ function CartList({ cart, cartTotal}) {
             )}
             {cart.length > 0 && (
               <div className="">
-                <p className="p-0 m-0 mb-3 text-end CartList__total">Total: {formatPrice(cartTotal())}{" "}</p>
+                <p className="p-0 m-0 mb-3 text-end CartList__total">Total: {formatPrice(cartTotal())}</p>
                 <div className="d-flex justify-content-center gap-3">
                   <button className="CartList__btn" onClick={() => navigate('/checkout')}>Comprar</button>
                   <button className="CartList__btn " onClick={ () => clearCart()}>Vaciar carrito</button>
@@ -35,5 +33,4 @@ function CartList({ cart, cartTotal}) {
       </>
     );
 }
-
 export default CartList

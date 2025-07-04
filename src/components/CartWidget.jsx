@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import CartContext from "../Context/CartContext";
-import { Navigate, useNavigate } from "react-router";
-
+import { useNavigate } from "react-router";
 function CartWidget() { 
   const { getAmount } = useContext(CartContext);
   const navigate = useNavigate();
@@ -15,5 +14,4 @@ function CartWidget() {
       </button>
     );
 }
-
 export default CartWidget;
